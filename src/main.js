@@ -1,8 +1,8 @@
-import Koa from 'koa'
-const app = new Koa()
-app.use((ctx, next) => {
-  ctx.body = 'hello koa'
-})
-app.listen(3000, () => {
-  console.log('server is running at http://localhost:3000')
+
+import app from './app/index.js'
+import port from './config/config.default.js'
+
+app.listen(port, () => {
+  console.log(port)
+  console.log(`server is running at http://localhost:${port}`)
 })
