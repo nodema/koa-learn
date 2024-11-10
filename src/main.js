@@ -1,8 +1,8 @@
 
 import app from './app/index.js'
-import port from './config/config.default.js'
+import configOBJ from './config/config.default.js'
+const { APP_PORT } = configOBJ
 
-app.listen(port, () => {
-  console.log(port)
-  console.log(`server is running at http://localhost:${port}`)
+app.listen(APP_PORT, () => {
+  console.log(`server is running at http://localhost:${APP_PORT}`)
 })
