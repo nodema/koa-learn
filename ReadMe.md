@@ -5,20 +5,23 @@
 4.dotenv - 加载环境变量的库
 5.npm i sequelize - 用于与MySQL数据库进行交互的库
 6.mysql2 - 用于与MySQL数据库进行交互的库
+<img src="./koa基本流程图.png" alt="koa">
 ### 目录结构说明
 目录结构说明
 node_modules/: 该目录包含项目所需的所有依赖模块。
 src/: 存放源代码的主要目录。
   main.js: 应用程序的主入口文件，通常用于启动Koa服务器。
   app index.js: 应用的主入口文件，通常用于启动Koa服务器。
-  routes/: 存放路由定义的文件夹，处理不同的HTTP请求。
-  controllers/: 存放控制器文件的文件夹，用于处理业务逻辑和返回响应。
-  services/: 存放服务文件的文件夹，用于操作数据库。
+  routes/: 存放路由定义的文件夹，处理不同的HTTP请求,转发给控制器不同的方法。
+  controllers/: 存放控制器文件的文件夹，用于处理业务逻辑和返回响应（解析接口的参数等->操作数据库->返回结果）。
+  services/: 存放服务文件的文件夹，通过model操作数据库。
 
 .env: 存放环境变量的配置文件，通常用于管理敏感信息和配置。
 .gitignore: 指定Git在版本控制时要忽略的文件和目录。
 package.json: 包含项目的基本信息、依赖项和可执行的脚本。
 README.md: 项目的说明文档，通常包含安装和使用指南。
+### 流程
+客户发送请求->koa接收请求->router解析路由转到控制器->control解析请求参数,操作数据库,返回数据到body->koa-body返回结果
 #### 一.node初始化
 1. npm init -y
 #### 二.安装koa，配置库文件
@@ -27,3 +30,4 @@ README.md: 项目的说明文档，通常包含安装和使用指南。
  3.安装nodemon编写pacage.json配置 "dev": "nodemon ./src/main.js"，以便使用 npm run dev 启动项目
  4.读取配置文件 安装dotenv npm i dotenv 读取根目录中的.env文件,并将配置信息挂载到process.env上
  #### 三.koa中间件
+ #### 四.bcryptjs加密密码

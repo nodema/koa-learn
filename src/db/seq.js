@@ -23,12 +23,12 @@ const seq = new Sequelize(MYSQL_DATABASE, MYSQL_USER, MYSQL_PASSWORD, {
   logging: false,
 });
 // 验证连接是否成功
-seq
-  .authenticate()
-  .then(() => {
-    console.log("数据库连接成功");
-  })
-  .catch((err) => {
-    console.log("数据库连接失败", err);
-  });
+// seq
+//   .authenticate()
+//   .then(() => {
+//     console.log("数据库连接成功");
+//   })
+//   .catch((err) => {
+//     console.log("数据库连接失败", err);
+//   });
 export default seq
