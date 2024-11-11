@@ -20,11 +20,10 @@ class UserController {
         user_name: res.user_name
       }
     }
-
-
   }
   async login(ctx, next) {
-    ctx.body = '登录成功'
+    const { user_name } = ctx.request.body
+    ctx.body = `欢迎回来${user_name}`
   }
 }
 export default new UserController()
